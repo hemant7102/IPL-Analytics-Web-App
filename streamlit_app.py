@@ -198,7 +198,7 @@ elif feature == "Bowling Record":
         ax.set_ylabel("Wickets")
         ax.set_title("Economy vs Wickets")
         st.pyplot(fig)
-        
+
     with tab3:
         st.dataframe(vs, use_container_width=True)
         download_csv(vs, f"{bowler}_bowling_vs_teams_{season}.csv")
