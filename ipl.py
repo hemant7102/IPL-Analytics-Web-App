@@ -17,7 +17,7 @@ def teamVteamAPI(team1, team2, season="all"):
     df = matches.copy()
 
     if season != "all":
-        df = df[df.Season == int(season)]
+        df = df[df.Season.astype(str) == str(season)]
 
     valid_teams = set(df.Team1).union(set(df.Team2))
     if team1 not in valid_teams or team2 not in valid_teams:

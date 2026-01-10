@@ -97,7 +97,7 @@ def batsmanAPI(batsman, season="all"):
         "fours": int(df[(df.batsman_run == 4) & (df.non_boundary == 0)].shape[0]),
         "sixes": int(df[(df.batsman_run == 6) & (df.non_boundary == 0)].shape[0]),
         "avg": round(df.batsman_run.sum() / outs, 2) if outs else None,
-        "strikeRate": round((df.batsman_run.sum() / balls_faced) * 100, 2),
+        "strikeRate": round((df.batsman_run.sum() / balls_faced) * 100, 2) if balls_faced else 0,
         "notOut": int(df.ID.nunique() - outs),
         "mom": int(df[df.Player_of_Match == batsman].ID.nunique())
     }
@@ -112,7 +112,8 @@ def batsmanAPI(batsman, season="all"):
             "innings": int(tdf.ID.nunique()),
             "runs": int(tdf.batsman_run.sum()),
             "avg": round(tdf.batsman_run.sum() / outs, 2) if outs else None,
-            "strikeRate": round((tdf.batsman_run.sum() / balls) * 100, 2) if balls else 0
+            "strikeRate": round((df.batsman_run.sum() / balls_faced) * 100, 2) if balls_faced else 0
+
         }
 
     return {batsman: {"all": overall, "against": against}}
