@@ -36,7 +36,7 @@ This app is deployed using Streamlit Cloud.
 
 
 ## Live App:
-(https://ipl-analytics-web-appgit-3oqffbjdfen4vgktsjardc.streamlit.app/)
+https://ipl-analytics-web-appgit-3oqffbjdfen4vgktsjardc.streamlit.app/
 
 ## Author
 
